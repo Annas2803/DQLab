@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 plt.clf()
 # Kategorisasi rata-rata besar transaksi
-def func(row):
+def f(row):
 	if (row['Average_Transaction_Amount'] >= 100000 and row['Average_Transaction_Amount'] <=200000):
 		val ='1. 100.000 - 250.000'
 	elif (row['Average_Transaction_Amount'] >250000 and row['Average_Transaction_Amount'] <= 500000):
@@ -31,7 +31,7 @@ def func(row):
 	return val
 
 # Tambahkan kolom baru
-df['Average_Transaction_Amount_Group'] = df.apply(func, axis=1)
+df['Average_Transaction_Amount_Group'] = df.apply(f, axis=1)
 df_year = df.groupby(['Average_Transaction_Amount_Group'])['Customer_ID'].count()
 df_year.plot(x='Average_Transaction_Amount_Group', y='Customer_ID',kind='bar', title='Customer Distribution by Average Transaction Amount Group')
 plt.xlabel('Average_Transaction_Amount_Group')
