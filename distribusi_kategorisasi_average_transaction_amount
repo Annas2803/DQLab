@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 plt.clf()
 # Kategorisasi rata-rata besar transaksi
 def f(row):
-	if (row['Average_Transaction_Amount'] >= 100000 and row['Average_Transaction_Amount'] <=200000):
+	if (row['Average_Transaction_Amount'] >= 100000 and row['Average_Transaction_Amount'] <=250000):
 		val ='1. 100.000 - 250.000'
 	elif (row['Average_Transaction_Amount'] >250000 and row['Average_Transaction_Amount'] <= 500000):
 		val ='2. >250.000 - 500.000'
